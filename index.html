@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abhijeet — Software Engineer Portfolio">
+  <title>Abhijeet | Software Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+</head>
+<!-- =========================================================
+     PROJECT DETAIL MODAL
+========================================================= -->
+
+<div
+    class="project-modal"
+    id="projectModal"
+    aria-hidden="true"
+>
+
+    <div
+        class="project-modal-backdrop"
+        onclick="closeProject()"
+    ></div>
+
+
+    <div
+        class="project-detail-card"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <!-- CLOSE -->
+
+        <button
+            class="project-detail-close"
+            type="button"
+            onclick="closeProject()"
+            aria-label="Close project"
+        >
+            ×
+        </button>
+
+
+        <!-- HEADER -->
+
+        <div class="project-detail-header">
+
+            <div
+                class="project-detail-number"
+                id="projectDetailNumber"
+            >
+                01
+            </div>
+
+            <div>
+
+                <div
+                    class="project-detail-kicker"
+                    id="projectDetailCategory"
+                >
+                    WEB PROJECT
+                </div>
+
+                <h2 id="projectDetailTitle">
+                    Image Portfolio
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- BODY -->
+
+        <div class="project-detail-body">
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="project-detail-block">
+
+                <span>ABOUT PROJECT</span>
+
+                <p id="projectDetailDescription">
+                    Project description.
+                </p>
+
+            </div>
+
+
+
+            <!-- META -->
+
+            <div class="project-detail-meta">
+
+
+                <div class="project-detail-block">
+
+                    <span>CREATED DATE</span>
+
+                    <p id="projectDetailDate">
+                        Add created date
+                    </p>
+
+                </div>
+
+
+                <div class="project-detail-block">
+
+                    <span>PROJECT LINK</span>
+
+                    <a
+                        id="projectDetailLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Open Project ↗
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TECHNOLOGIES -->
+
+            <div class="project-detail-block">
+
+                <span>
+                    LANGUAGES / TECHNOLOGIES
+                </span>
+
+                <div
+                    class="project-detail-tags"
+                    id="projectDetailTech"
+                ></div>
+
+            </div>
+
+
+
+            <!-- CODE -->
+
+            <div class="project-detail-block">
+
+                <span>
+                    SOURCE CODE
+                </span>
+
+                <a
+                    id="projectDetailCode"
+                    href="https://github.com/benten-afk"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View Code on GitHub ↗
+                </a>
+
+            </div>
+
+
+
+            <!-- JOIN -->
+
+            <div class="project-detail-join">
+
+                <div>
+
+                    <span>
+                        WANT TO BUILD SOMETHING TOGETHER?
+                    </span>
+
+                    <strong>
+                        Join me and let's build this project.
+                    </strong>
+
+                </div>
+
+
+                <a
+                    class="project-join-btn"
+                    href="https://discord.gg/W5SqtmWdD4"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Join Me ↗
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<audio id="portfolioMusic" loop preload="auto">
+    <source src="MUSIC\song.mp3" type="audio/mpeg">
+</audio>
+<button id="autoScrollBtn" class="auto-scroll-btn">
+  <span>↓</span> SCROLL
+</button>
+<button id="musicBtn" class="music-btn">
+    🎵 Music
+</button>
+<div id="ai-assistant-root" class="ai-assistant-container">
+  
+  <!-- Pop-up Chat Box Drawer -->
+  <div id="ai-chat-box" class="ai-chat-box">
+    <div class="ai-chat-header">
+      <div class="ai-avatar-thumb">
+        <img src="https://i.pravatar.cc/100?img=12" alt="Avatar">
+      </div>
+      <div class="ai-header-info">
+        <h4>abhijeet's Assistant ✨</h4>
+        <p><span class="ai-online-dot"></span> PORTFOLIO GUIDE • ONLINE</p>
+      </div>
+      <button class="ai-close-btn" onclick="toggleAssistantChat()">✕</button>
+    </div>
+
+    <div id="ai-chat-body" class="ai-chat-body"></div>
+
+    <div class="ai-chat-footer">
+      <input type="text" id="ai-user-input" placeholder="Enter your name or ask a question..." onkeypress="handleKeyPress(event)" />
+      <button onclick="sendUserMessage()" class="ai-send-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating Trigger Card (Hides on Open) -->
+  <div class="ai-widget-trigger" onclick="toggleAssistantChat()">
+    <div class="ai-badge-header">ben</div>
+    <div class="ai-widget-card">
+      <div class="ai-bubble-tag">Hello 👋</div>
+      <img src="https://i.pravatar.cc/100?img=12" alt="Character" class="ai-character-img">
+      <div class="ai-ask-bar">
+        <span>ASK ME!</span>
+        <span class="ai-chat-icon">💬</span>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div class="noise"></div>
+
+<body>
+  <nav class="navbar">
+    <a href="#home" class="logo">ABHIJEET<span>.</span></a>
+
+    <div class="nav-links">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#social">Contact</a>
+    </div>
+
+    <a class="talk-btn" href="mailto:abhijeet.kumar851084@gmail.com">
+      <span>✉</span> Let's Talk
+    </a>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-orb orb-one"></div>
+      <div class="hero-orb orb-two"></div>
+
+      <div class="hero-copy reveal">
+        <div class="kicker"><i></i> Software Engineer in Progress</div>
+
+        <h1>
+          I build<br>
+          <span>ideas</span> into<br>
+          reality<span class="dot">.</span>
+        </h1>
+
+        <p class="hero-description">
+          Hii i am Abhijeet
+          Building scalable web platforms and software solutions that turn ambitious ideas into digital realities.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary magnetic" href="#projects">View My Projects <b>→</b></a>
+          <a class="btn btn-outline magnetic" href="mailto:abhijeet.kumar851084@gmail.com">Contact Me</a>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/benten-afk" target="_blank" aria-label="GitHub">GH</a>
+          <a href="mailto:abhijeet.kumar851084@gmail.com" aria-label="Email">✉</a>
+          <a href="#projects" aria-label="Code">&lt;/&gt;</a>
+        </div>
+
+        <div class="scroll-cue">
+          <span class="scroll-line"></span>
+          <span>SCROLL DOWN</span>
+        </div>
+      </div>
+
+     <div class="hero-visual">
+
+    <div class="hero-image">
+        <img src="pics/hero-character.png" alt="Abhijeet">
+        
+        <div class="status-card">
+            ...
+        </div>
+
+        <div class="currently-card">
+            ...
+        </div>
+    </div>
+
+</div>
+            <small>STATUS</small>
+            <strong>Building & Learning</strong>
+          </div>
+        </div>
+
+        <div class="floating-code glass-card">
+          <small>// CURRENTLY</small>
+          <span><b>✓</b> Building Projects</span>
+          <span><b>✓</b> Learning New Tech</span>
+          <span><b>✓</b> Improving DSA</span>
+          <span><b>✓</b> Exploring AI</span>
+        </div>
+
+        <div class="signature">Abhijeet</div>
+
+        <div class="scene-particle p1"></div>
+        <div class="scene-particle p2"></div>
+        <div class="scene-particle p3"></div>
+      </div>
+    </section>
+
+   <!-- =========================
+     ABOUT SECTION
+========================= -->
+
+<section id="about" class="about-section">
+
+    <!-- Section Heading -->
+    <div class="section-title">
+        <span>01 / ABOUT</span>
+        <h2>About <em>Me</em></h2>
+    </div>
+
+
+    <!-- =========================
+         ABOUT CARD
+    ========================== -->
+
+    <div class="about-card">
+
+        <!-- LEFT : PHOTO -->
+        <div class="about-photo-area">
+
+            <div class="photo-frame">
+
+                <!-- Apni photo yaha lagao -->
+                <img src="pics\about-photo.png" alt="Abhijeet">
+
+                <div class="photo-corner top-left"></div>
+                <div class="photo-corner bottom-right"></div>
+
+            </div>
+
+            <div class="photo-label">
+                <span class="status-dot"></span>
+                SOFTWARE ENGINEER
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT : ABOUT ME -->
+        <div class="about-content">
+
+            <span class="small-label">// WHO I AM</span>
+
+            <h3>
+                I don't just <span>write code.</span>
+                I turn ideas into something real.
+            </h3>
+
+            <p>
+                I'm Abhijeet, a BCA student and aspiring Software Engineer
+                who enjoys building projects, solving problems and exploring
+                new technologies.
+            </p>
+
+            <p>
+                I like taking an idea from a simple thought and turning it
+                into a working project. Every project I build helps me learn
+                something new and improve my development skills.
+            </p>
+
+            <p>
+                I'm especially interested in software development, problem
+                solving, AI-assisted development and creating useful digital
+                experiences.
+            </p>
+
+
+            <!-- Small Info -->
+            <div class="about-info">
+
+                <div>
+                    <span>EDUCATION</span>
+                    <strong>BCA</strong>
+                </div>
+
+                <div>
+                    <span>ROLE</span>
+                    <strong>Developer</strong>
+                </div>
+
+                <div>
+                    <span>FOCUS</span>
+                    <strong>Building</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <div class="education-wrapper">
+
+        <div class="education-heading">
+            <span>02 / EDUCATION</span>
+
+            <h2>
+                My <em>Education</em>
+            </h2>
+
+            <p>
+                Click any education card to see the details.
+            </p>
+        </div>
+
+
+        <!-- Education Timeline -->
+
+        <div class="education-timeline">
+
+
+            <!-- 10TH -->
+
+            <button
+                class="education-card"
+                onclick="openEducation('10th')">
+
+                <div class="education-number">
+                    01
+                </div>
+
+                <div class="education-icon">
+                    10
+                </div>
+
+                <div class="education-card-content">
+
+                    <span>SECONDARY EDUCATION</span>
+
+                    <h3>10th Standard</h3>
+
+                    <p>
+                        School Education
+                    </p>
+
+                </div>
+
+                <div class="education-arrow">
+                    ↗
+                </div>
+
+            </button>
+
+
+            <!-- CONNECTOR -->
+
+            <div class="education-line">
+                <span></span>
+            </div>
+
+
+            <!-- 12TH -->
+
+            <button
+                class="education-card"
+                onclick="openEducation('12th')">
+
+                <div class="education-number">
+                    02
+                </div>
+
+                <div class="education-icon">
+                    12
+                </div>
+
+                <div class="education-card-content">
+
+                    <span>SENIOR SECONDARY</span>
+
+                    <h3>12th Standard</h3>
+
+                    <p>
+                        Higher Secondary Education
+                    </p>
+
+                </div>
+
+                <div class="education-arrow">
+                    ↗
+                </div>
+
+            </button>
+
+
+            <!-- CONNECTOR -->
+
+            <div class="education-line">
+                <span></span>
+            </div>
+
+
+            <!-- BCA -->
+
+            <button
+                class="education-card"
+                onclick="openEducation('bca')">
+
+                <div class="education-number">
+                    03
+                </div>
+
+                <div class="education-icon">
+                    BCA
+                </div>
+
+                <div class="education-card-content">
+
+                    <span>UNDERGRADUATE DEGREE</span>
+
+                    <h3>Bachelor of Computer Applications</h3>
+
+                    <p>
+                        BCA • Currently Pursuing
+                    </p>
+
+                </div>
+
+                <div class="education-arrow">
+                    ↗
+                </div>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION POPUP
+========================= -->
+
+<div
+    id="educationModal"
+    class="education-modal">
+
+    <div class="modal-overlay"
+         onclick="closeEducation()">
+    </div>
+
+
+    <div class="education-modal-card">
+
+        <!-- Close -->
+        <button
+            class="modal-close"
+            onclick="closeEducation()">
+            ×
+        </button>
+
+
+        <!-- Top -->
+        <div class="modal-top">
+
+            <span id="modalTag">
+                EDUCATION
+            </span>
+
+            <div
+                id="modalNumber"
+                class="modal-number">
+                01
+            </div>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="modal-content">
+
+            <div
+                id="modalIcon"
+                class="modal-icon">
+                10
+            </div>
+
+            <h2 id="modalTitle">
+                10th Standard
+            </h2>
+
+            <p
+                id="modalDescription"
+                class="modal-description">
+                Education details
+            </p>
+
+
+            <!-- Details -->
+
+            <div class="modal-details">
+
+                <div class="detail-box">
+
+                    <span>MARKS</span>
+
+                    <strong id="modalMarks">
+                        YOUR MARKS
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>SCHOOL / COLLEGE</span>
+
+                    <strong id="modalInstitute">
+                        YOUR SCHOOL
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>BOARD / UNIVERSITY</span>
+
+                    <strong id="modalBoard">
+                        YOUR BOARD
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span>YEAR</span>
+
+                    <strong id="modalYear">
+                        YOUR YEAR
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- COOL EYES GIF -->
+<div class="eyes-gif-section">
+    <div class="eyes-glow"></div>
+
+    <img
+        src="pics/1028f99fd8f021b7b30e6e1899a88b29.gif"
+        alt="Animated Eyes"
+        class="eyes-gif"
+    >
+</div>
+ <!-- =====================================================
+     SKILLS SECTION
+====================================================== -->
+
+<section id="skills" class="skills-section">
+
+    <!-- HEADER -->
+    <div class="skills-header">
+
+        <div>
+            <span class="skills-eyebrow">
+                03 / SKILLS
+            </span>
+
+            <h2>
+                What I <span>Work With.</span>
+            </h2>
+        </div>
+
+        <p>
+            Technologies, tools and skills I use to turn
+            ideas into working projects.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         PROGRAMMING LANGUAGES
+    ================================================== -->
+
+    <div class="skills-category">
+
+        <div class="skills-category-title">
+
+            <span class="category-line"></span>
+
+            <h3>Programming Languages</h3>
+
+            <span class="category-count">05</span>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <!-- JAVA -->
+            <button
+                class="skill-card"
+                onclick="openSkill('java')">
+
+                <span class="skill-index">01</span>
+
+                <div class="skill-logo java-logo">
+                    JAVA
+                </div>
+
+                <div class="skill-card-info">
+                    <span>LANGUAGE</span>
+                    <h4>Java</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- PYTHON -->
+            <button
+                class="skill-card"
+                onclick="openSkill('python')">
+
+                <span class="skill-index">02</span>
+
+                <div class="skill-logo python-logo">
+                    PY
+                </div>
+
+                <div class="skill-card-info">
+                    <span>LANGUAGE</span>
+                    <h4>Python</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- HTML -->
+            <button
+                class="skill-card"
+                onclick="openSkill('html')">
+
+                <span class="skill-index">03</span>
+
+                <div class="skill-logo html-logo">
+                    &lt;/&gt;
+                </div>
+
+                <div class="skill-card-info">
+                    <span>LANGUAGE</span>
+                    <h4>HTML</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- CSS -->
+            <button
+                class="skill-card"
+                onclick="openSkill('css')">
+
+                <span class="skill-index">04</span>
+
+                <div class="skill-logo css-logo">
+                    #
+                </div>
+
+                <div class="skill-card-info">
+                    <span>LANGUAGE</span>
+                    <h4>CSS</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- DSA -->
+            <button
+                class="skill-card"
+                onclick="openSkill('dsa')">
+
+                <span class="skill-index">05</span>
+
+                <div class="skill-logo dsa-logo">
+                    DSA
+                </div>
+
+                <div class="skill-card-info">
+                    <span>COMPUTING</span>
+                    <h4>DSA</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         TOOLS
+    ================================================== -->
+
+    <div class="skills-category">
+
+        <div class="skills-category-title">
+
+            <span class="category-line"></span>
+
+            <h3>Tools & Technologies</h3>
+
+            <span class="category-count">04</span>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <!-- VS CODE -->
+            <button
+                class="skill-card"
+                onclick="openSkill('vscode')">
+
+                <span class="skill-index">01</span>
+
+                <div class="skill-logo vscode-logo">
+                    VS
+                </div>
+
+                <div class="skill-card-info">
+                    <span>EDITOR</span>
+                    <h4>VS Code</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- GITHUB -->
+            <button
+                class="skill-card"
+                onclick="openSkill('github')">
+
+                <span class="skill-index">02</span>
+
+                <div class="skill-logo github-logo">
+                    GH
+                </div>
+
+                <div class="skill-card-info">
+                    <span>VERSION CONTROL</span>
+                    <h4>GitHub</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- REPLIT -->
+            <button
+                class="skill-card"
+                onclick="openSkill('replit')">
+
+                <span class="skill-index">03</span>
+
+                <div class="skill-logo replit-logo">
+                    RE
+                </div>
+
+                <div class="skill-card-info">
+                    <span>DEVELOPMENT</span>
+                    <h4>Replit</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- LINUX -->
+            <button
+                class="skill-card"
+                onclick="openSkill('linux')">
+
+                <span class="skill-index">04</span>
+
+                <div class="skill-logo linux-logo">
+                    LX
+                </div>
+
+                <div class="skill-card-info">
+                    <span>OPERATING SYSTEM</span>
+                    <h4>Linux</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         AI TOOLS
+    ================================================== -->
+
+    <div class="skills-category">
+
+        <div class="skills-category-title">
+
+            <span class="category-line"></span>
+
+            <h3>AI Assistants</h3>
+
+            <span class="category-count">05</span>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <!-- OPENAI -->
+            <button
+                class="skill-card"
+                onclick="openSkill('openai')">
+
+                <span class="skill-index">01</span>
+
+                <div class="skill-logo ai-logo">
+                    AI
+                </div>
+
+                <div class="skill-card-info">
+                    <span>AI ASSISTANT</span>
+                    <h4>OpenAI</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- CLAUDE -->
+            <button
+                class="skill-card"
+                onclick="openSkill('claude')">
+
+                <span class="skill-index">02</span>
+
+                <div class="skill-logo ai-logo">
+                    CL
+                </div>
+
+                <div class="skill-card-info">
+                    <span>AI ASSISTANT</span>
+                    <h4>Claude</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- GEMINI -->
+            <button
+                class="skill-card"
+                onclick="openSkill('gemini')">
+
+                <span class="skill-index">03</span>
+
+                <div class="skill-logo ai-logo">
+                    GE
+                </div>
+
+                <div class="skill-card-info">
+                    <span>AI ASSISTANT</span>
+                    <h4>Gemini</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- COPILOT -->
+            <button
+                class="skill-card"
+                onclick="openSkill('copilot')">
+
+                <span class="skill-index">04</span>
+
+                <div class="skill-logo ai-logo">
+                    CP
+                </div>
+
+                <div class="skill-card-info">
+                    <span>AI CODING</span>
+                    <h4>GitHub Copilot</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <!-- MICROSOFT COPILOT -->
+            <button
+                class="skill-card"
+                onclick="openSkill('mscopilot')">
+
+                <span class="skill-index">05</span>
+
+                <div class="skill-logo ai-logo">
+                    MC
+                </div>
+
+                <div class="skill-card-info">
+                    <span>AI ASSISTANT</span>
+                    <h4>Microsoft Copilot</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         OTHER SKILLS
+    ================================================== -->
+
+    <div class="skills-category">
+
+        <div class="skills-category-title">
+
+            <span class="category-line"></span>
+
+            <h3>Other Skills</h3>
+
+            <span class="category-count">04</span>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <button
+                class="skill-card"
+                onclick="openSkill('communication')">
+
+                <span class="skill-index">01</span>
+
+                <div class="skill-logo other-logo">
+                    COM
+                </div>
+
+                <div class="skill-card-info">
+                    <span>SOFT SKILL</span>
+                    <h4>Communication</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <button
+                class="skill-card"
+                onclick="openSkill('problem')">
+
+                <span class="skill-index">02</span>
+
+                <div class="skill-logo other-logo">
+                    PS
+                </div>
+
+                <div class="skill-card-info">
+                    <span>SOFT SKILL</span>
+                    <h4>Problem Solving</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <button
+                class="skill-card"
+                onclick="openSkill('teamwork')">
+
+                <span class="skill-index">03</span>
+
+                <div class="skill-logo other-logo">
+                    TW
+                </div>
+
+                <div class="skill-card-info">
+                    <span>SOFT SKILL</span>
+                    <h4>Teamwork</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+
+            <button
+                class="skill-card"
+                onclick="openSkill('content')">
+
+                <span class="skill-index">04</span>
+
+                <div class="skill-logo other-logo">
+                    CC
+                </div>
+
+                <div class="skill-card-info">
+                    <span>CREATIVE</span>
+                    <h4>Content Creator</h4>
+                </div>
+
+                <span class="skill-open">↗</span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- COOL EYES GIF -->
+<div class="eyes-gif-section">
+    <div class="eyes-glow"></div>
+
+    <img
+        src="pics\Everything Is Star Stuff.gif"
+        alt="Animated Eyes"
+        class="eyes-gif"
+    >
+</div>
+    <!-- =========================================================
+     PROJECTS SECTION
+========================================================= -->
+
+<section id="projects" class="section reveal project-section">
+
+    <div class="section-heading">
+        <span>03 / PROJECTS</span>
+
+        <h2>
+            Things I've <em>built.</em>
+        </h2>
+    </div>
+
+    <p class="section-intro">
+        Explore my projects. Click any project to see its details,
+        technologies, links and development information.
+    </p>
+
+
+    <!-- PROJECT CARDS -->
+
+    <div class="project-grid-premium">
+
+
+        <!-- 01 IMAGE PORTFOLIO -->
+
+        <button
+            class="project-card project-card-premium"
+            type="button"
+            onclick="openProject('portfolio')"
+        >
+
+            <div class="project-index">
+                01
+            </div>
+
+            <div class="project-main">
+
+                <div class="project-top">
+                    <span>WEB PROJECT</span>
+                    <span>01 / 06</span>
+                </div>
+
+                <h3>
+                    <em>Portfolio</em>
+                </h3>
+
+                <p>
+                    A creative portfolio project designed to present
+                    images and personal work using a modern dark
+                    red-neon interface.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </button>
+
+
+
+        <!-- 02 CV EASY -->
+
+        <button
+            class="project-card project-card-premium"
+            type="button"
+            onclick="openProject('cv-easy')"
+        >
+
+            <div class="project-index">
+                02
+            </div>
+
+            <div class="project-main">
+
+                <div class="project-top">
+                    <span>WEB APP</span>
+                    <span>02 / 06</span>
+                </div>
+
+                <h3>
+                    CV <em>Easy</em>
+                </h3>
+
+                <p>
+                    A web project created to make CV creation easier,
+                    faster and more accessible for users.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </button>
+
+
+
+        <!-- 03 PARKING APPLICATION -->
+
+        <button
+            class="project-card project-card-premium"
+            type="button"
+            onclick="openProject('parking-app')"
+        >
+
+            <div class="project-index">
+                03
+            </div>
+
+            <div class="project-main">
+
+                <div class="project-top">
+                    <span>APPLICATION</span>
+                    <span>03 / 06</span>
+                </div>
+
+                <h3>
+                    Parking <em>Application</em>
+                </h3>
+
+                <p>
+                    A parking management application concept focused
+                    on organizing parking information and application
+                    logic.
+                </p>
+
+                <div class="tags">
+                    <span>Java</span>
+                    <span>DBMS</span>
+                    <span>SQL</span>
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </button>
+
+
+
+        <!-- 04 MR DOCTOR -->
+
+        <button
+            class="project-card project-card-premium"
+            type="button"
+            onclick="openProject('mr-doctor')"
+        >
+
+            <div class="project-index">
+                04
+            </div>
+
+            <div class="project-main">
+
+                <div class="project-top">
+                    <span>APPLICATION</span>
+                    <span>04 / 06</span>
+                </div>
+
+                <h3>
+                    Mr <em>Doctor APP</em>
+                </h3>
+
+                <p>
+                    A healthcare application concept designed to
+                    explore useful digital experiences and application
+                    functionality.
+                </p>
+
+                <div class="tags">
+                    <span>Java</span>
+                    <span>DBMS</span>
+                    <span>UI</span>
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </button>
+
+
+
+        <!-- 05 ONE STORE -->
+
+        <button
+            class="project-card project-card-premium"
+            type="button"
+            onclick="openProject('one-store')"
+        >
+
+            <div class="project-index">
+                05
+            </div>
+
+            <div class="project-main">
+
+                <div class="project-top">
+                    <span>APP</span>
+                    <span>05 / 06</span>
+                </div>
+
+                <h3>
+                    One <em>Store APP</em>
+                </h3>
+
+                <p>
+                    An application concept focused on bringing
+                    products and shopping functionality together
+                    in one place.
+                </p>
+
+                <div class="tags">
+                    <span>Java</span>
+                    <span>DBMS</span>
+                    <span>Application</span>
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </button>
+
+
+
+        <!-- 06 CASH GAME -->
+
+        <button
+            class="project-card project-card-premium"
+            type="button"
+            onclick="openProject('cash-game')"
+        >
+
+            <div class="project-index">
+                06
+            </div>
+
+            <div class="project-main">
+
+                <div class="project-top">
+                    <span>GAME PROJECT</span>
+                    <span>06 / 06</span>
+                </div>
+
+                <h3>
+                    Cash <em>Game Site</em>
+                </h3>
+
+                <p>
+                    An interactive game-site concept created to
+                    experiment with interfaces and application logic.
+                </p>
+
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="experience-section">
+
+    <div class="section-heading">
+        <span>04 / EXPERIENCE</span>
+        <h2>Where I've <b>worked.</b></h2>
+        <p>
+            My practical experience, learning journey and the environments
+            where I developed my technical skills.
+        </p>
+    </div>
+
+    <div class="experience-grid">
+
+        <!-- EXPERIENCE 1 -->
+        <div class="experience-card reveal-card">
+            <div class="experience-number">01</div>
+
+            <div class="experience-icon">
+                💻
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-type">EXPERIENCE</span>
+
+                <h3>Computer Center Teaching</h3>
+
+                <p class="experience-role">
+                    Teaching & Computer Support
+                </p>
+
+                <p class="experience-description">
+                    Teaching computer fundamentals and helping students
+                    understand practical computer applications and
+                    technology.
+                </p>
+
+                <div class="experience-bottom">
+                    <span>2024 — 2025</span>
+                    <span>1 YEAR</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- EXPERIENCE 2 -->
+        <div class="experience-card reveal-card">
+            <div class="experience-number">02</div>
+
+            <div class="experience-icon">
+                🖥️
+            </div>
+
+            <div class="experience-content">
+                <span class="experience-type">EXPERIENCE</span>
+
+                <h3>IT & Systems</h3>
+
+                <p class="experience-role">
+                    Hardware • Software • Networking
+                </p>
+
+                <p class="experience-description">
+                    Worked with hardware, software, networking,
+                    cybersecurity concepts and data management
+                    in a practical environment.
+                </p>
+
+                <div class="experience-bottom">
+                    <span>2025 — 2025</span>
+                    <span>6 MONTHS</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certifications" class="certification-section">
+
+    <div class="section-heading">
+        <span>05 / CERTIFICATIONS</span>
+        <h2>Things I've <b>achieved.</b></h2>
+        <p>
+            Certificates, competitions and achievements from my learning
+            and development journey.
+        </p>
+    </div>
+
+
+    <div class="certificate-grid">
+
+        <!-- CERTIFICATE 1 -->
+        <div
+            class="certificate-card"
+            onclick="openCertificate('srcem')"
+        >
+
+            <div class="certificate-top">
+                <span class="certificate-number">01</span>
+                <span class="certificate-arrow">↗</span>
+            </div>
+
+            <div class="certificate-icon">
+                🏆
+            </div>
+
+            <span class="certificate-category">
+                HACKATHON
+            </span>
+
+            <h3>SRCEM Hackathon</h3>
+
+            <p>
+                2nd Position
+            </p>
+
+            <div class="certificate-date">
+                25 APRIL 2025
+            </div>
+
+            <div class="click-text">
+                CLICK TO VIEW →
+            </div>
+
+        </div>
+
+
+        <!-- CERTIFICATE 2 -->
+        <div
+            class="certificate-card"
+            onclick="openCertificate('gemini')"
+        >
+
+            <div class="certificate-top">
+                <span class="certificate-number">02</span>
+                <span class="certificate-arrow">↗</span>
+            </div>
+
+            <div class="certificate-icon">
+                🤖
+            </div>
+
+            <span class="certificate-category">
+                AI / WORKSHOP
+            </span>
+
+            <h3>Google Gemini</h3>
+
+            <p>
+                Free Bootcamp / Learning
+            </p>
+
+            <div class="certificate-date">
+                2025
+            </div>
+
+            <div class="click-text">
+                CLICK TO VIEW →
+            </div>
+
+        </div>
+
+
+        <!-- CERTIFICATE 3 -->
+        <div
+            class="certificate-card"
+            onclick="openCertificate('microsoft')"
+        >
+
+            <div class="certificate-top">
+                <span class="certificate-number">03</span>
+                <span class="certificate-arrow">↗</span>
+            </div>
+
+            <div class="certificate-icon">
+                🧠
+            </div>
+
+            <span class="certificate-category">
+                PROGRAMMING
+            </span>
+
+            <h3>Microsoft DSA</h3>
+
+            <p>
+                Data Structures & Algorithms
+            </p>
+
+            <div class="certificate-date">
+                05 MARCH 2026
+            </div>
+
+            <div class="click-text">
+                CLICK TO VIEW →
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATE MODAL ================= -->
+
+<div id="certificateModal" class="certificate-modal">
+
+    <div class="certificate-modal-box">
+
+        <button
+            class="certificate-close"
+            onclick="closeCertificate()"
+        >
+            ×
+        </button>
+
+        <div class="modal-glow"></div>
+
+        <span id="modalCategory" class="modal-category">
+            CERTIFICATE
+        </span>
+
+        <h2 id="modalTitle">
+            Certificate Name
+        </h2>
+
+        <div class="modal-line"></div>
+
+        <div class="modal-details">
+
+            <div class="modal-detail">
+                <span>ACHIEVEMENT</span>
+                <strong id="modalAchievement">
+                    Achievement
+                </strong>
+            </div>
+
+            <div class="modal-detail">
+                <span>DATE</span>
+                <strong id="modalDate">
+                    Date
+                </strong>
+            </div>
+
+            <div class="modal-detail">
+                <span>DESCRIPTION</span>
+                <p id="modalDescription">
+                    Certificate description.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Certificate Link -->
+        <a
+            id="certificateLink"
+            href="#"
+            target="_blank"
+            class="view-certificate-btn"
+        >
+            VIEW CERTIFICATE ↗
+        </a>
+
+    </div>
+
+</div>
+    <!-- =====================================================
+     SOCIAL / CONTACT SECTION
+===================================================== -->
+
+<section class="social-section" id="social">
+ 
+    <div class="social-container">
+
+        <!-- LEFT: GMAIL -->
+        <div class="social-contact">
+
+            <span class="social-label">CONTACT</span>
+
+            <h2>
+                Let's
+                <span>Connect.</span>
+            </h2>
+
+            <p class="social-description">
+                Have a question, project idea, or just want to say hello?
+                Send me a message directly through Gmail.
+            </p>
+
+
+            <!-- Gmail box -->
+            <a
+                class="gmail-box"
+                href="mailto:abhijeet.kumar851084@gmail.com"
+            >
+
+                <div class="gmail-icon">
+                    ✉
+                </div>
+
+                <div class="gmail-info">
+
+                    <span class="gmail-title">
+                        EMAIL ME
+                    </span>
+
+                    <strong>
+                        abhijeet.kumar851084@gmail.com
+                    </strong>
+
+                </div>
+
+                <span class="gmail-arrow">
+                    ↗
+                </span>
+
+            </a>
+
+
+            <!-- Message description -->
+            <div class="message-box">
+
+                <span>MESSAGE</span>
+
+                <p>
+                    I'm always open to discussing new projects,
+                    creative ideas, collaborations, and opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT: MOVING CHARACTER -->
+        <div class="moving-character">
+
+            <div class="character-glow"></div>
+
+            <div class="character-frame">
+
+                <span class="character-label">
+                    MOVING CHARACTER
+                </span>
+
+                <img
+                    src="pics\download (10).jfif"
+                    alt="Animated anime character"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL ICONS -->
+        <div class="social-links-area">
+
+            <span class="social-links-title">
+                FIND ME ONLINE
+            </span>
+
+            <div class="social-icons">
+
+                <!-- Instagram -->
+                <a
+                    href="https://instagram.com/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Instagram"
+                    class="social-icon instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+
+                <!-- Twitter / X -->
+                <a
+                    href="https://x.com/Abhijeet_cjp"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Twitter"
+                    class="social-icon twitter"
+                >
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+
+                <!-- Spotify -->
+                <a
+                    href="https://open.spotify.com/user/31mxxdrd7pwvo64opuzsr5it5pxq?si=9e67825c4e3045da"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Spotify"
+                    class="social-icon spotify"
+                >
+                    <i class="fa-brands fa-spotify"></i>
+                </a>
+
+
+                <!-- GitHub -->
+                <a
+                    href="https://github.com/benten-afk"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="GitHub"
+                    class="social-icon github"
+                >
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+
+                <!-- Discord -->
+                <a
+                    href="https://discord.gg/eKeJser8z"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Discord"
+                    class="social-icon discord"
+                >
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+
+
+                <!-- YouTube -->
+                <a
+                    href="https://www.youtube.com/@suff_ermen"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="YouTube"
+                    class="social-icon youtube"
+                >
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+  </main>
+
+  <footer>© 2026 ABHIJEET — BUILD. DEBUG. CREATE.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
